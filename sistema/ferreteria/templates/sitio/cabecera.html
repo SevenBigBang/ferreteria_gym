@@ -1,0 +1,35 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'sitio/css/estilo.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css">
+    <link rel="icon" href="sitio/img/img_logo.png" type="image/png">
+    <title>Ferreteria - G&M</title>
+    <link rel="icon" href="{% static 'sitio/img/logo.png' %}" type="png">
+</head>
+<body>
+
+    <header>
+        <img src="{% static 'sitio/img/img_logo.png' %}" alt="">
+        <nav>
+            <ul>
+                <li class="link-seleccionado"><a href="{% url 'inicio' %}">Inicio</a></li>
+                <li><a href="{% url 'productos' %}">Productos</a></li>
+            </ul>
+            {% if user.is_authenticated %}
+                {% if user.is_staff %}
+                    <a href="/admin/" class="btn-cuenta">Admin</a>
+                {% endif %}
+                <a href="{% url 'logout' %}" class="btn-cuenta">Cerrar sesión</a>
+            {% else %}
+                <a href="{% url 'registro' %}" class="btn-cuenta">Registro</a>
+            {% endif %}
+        </nav>
+        <div class="nav-bar" id="nav-bar"><i class="fa-solid fa-bars"></i></div>
+    </header>

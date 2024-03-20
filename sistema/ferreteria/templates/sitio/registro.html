@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro || ferreteria GYM</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+        /* Estilos para el contenedor de la página */
+        body, html {
+            height: 100%;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f8f9fa; /* Color de fondo */
+        }
+
+        form {
+            max-width: 400px; /* Ancho máximo del formulario */
+            padding: 30px;
+            border: 1px solid #ced4da;
+            border-radius: 10px;
+            background-color: #fff; /* Color de fondo */
+        }
+
+        /* Estilos para los campos del formulario */
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ced4da;
+            border-radius: 5px;
+            box-sizing: border-box;
+            font-size: 14px;
+        }
+
+        /* Estilos para los botones */
+        .btn-registro,
+        button[type="submit"] {
+            padding: 10px 20px;
+            border-radius: 5px;
+            color: #fff; /* Color del texto */
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            background-color: #007bff; /* Color de fondo */
+        }
+
+        .btn-registro:hover,
+        button[type="submit"]:hover {
+            background-color: #0056b3; /* Cambio de color de fondo en hover */
+        }
+
+        .btn-no-cuenta {
+            display: block;
+            width: auto;
+            background-color: transparent;
+            color: #007bff;
+            font-size: 16px;
+            border: none;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <div class="form-group d-flex justify-content-between align-items-center">
+        <div>
+            <a href="/login" class="btn btn-registro">Ya tengo cuenta</a>
+            <button type="submit" class="btn btn-ingresar">registrase</button>
+        </div>
+    </div>
+</form>
+
+</body>
+</html>

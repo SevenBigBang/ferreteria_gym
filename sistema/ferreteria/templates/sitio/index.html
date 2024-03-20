@@ -1,0 +1,105 @@
+{% include 'sitio/cabecera.html' %}
+{% load static %}
+
+<body>
+    {% if messages %}
+        {% for message in messages %}
+            <script>
+                alert("{{ message }}");
+            </script>
+        {% endfor %}
+    {% endif %}
+    <div class="ferreteria__contenedor seccion__inicio" id="inicio">
+        <h1>Ferreteria G&M<br> ¡Todo lo que necesitas AQUI!</h1>
+        <p>
+        
+        </p>
+        <form action="/">
+            <input type="text" placeholder="¿Que estas buscando?" />
+            <button><i class="ri-search-line"></i></button>
+        </form>
+        <a href="#productos"><i class="ri-arrow-down-double-line"></i></a>
+    </div>
+    
+    <section class="contenedor_seccion seccion_productos" id="productos">
+      <div class="contenido_producto">
+          <h2 class="titulo_producto">Tenemos productos de la mejor calidad</h2>
+          <p class="subtitulo_producto">
+              Prueba nuestros productos para demostrarte nuestra calidad, también 
+              puedes ver el catálogo de productos aquí
+          </p>
+          <a href="productos/">
+              <button class="btn">Productos</button>
+          </a>
+      </div>
+      <div class="imagen_producto">
+          <div class="contenido_imagen">
+              <img src="{% static 'sitio/img/aerosol.webp' %}" alt="aerosol" />
+              <p>Aerosol</p>
+              <h4>$13.999</h4>
+          </div>
+      </div>
+      <div class="imagen_producto">
+          <div class="contenido_imagen">
+              <img src="{% static 'sitio/img/alicate.jpg' %}" alt="alicate" />
+              <p>Alicate</p>
+              <h4>$40.999</h4>
+          </div>
+      </div>
+      <div class="imagen_producto">
+          <div class="contenido_imagen">
+              <img src="{% static 'sitio/img/bloque.jpg' %}" alt="bloque" />
+              <p>Bloque</p>
+              <h4>$1.4000</h4>
+          </div>
+      </div>
+  </section>
+  
+  <section class="nosotros__container" id="nosotros">
+    <img class="nosotros__background" src="{% static 'sitio/img/fondo.png' %}" alt="fondo" />
+    <div class="nosotros__content">
+      <h2 class="nosotros__header">¿Por qué elegir Ferretería G&M?</h2>
+      <p class="nosotros__description">
+        Confianza y calidad respaldadas por años de experiencia en el mercado. Descubre por qué somos la elección preferida para tus necesidades en herramientas y productos ferreteros.
+      </p>
+      <div class="caracteristicas__grid">
+        <div class="caracteristica__card">
+          <span><i class="ri-truck-line"></i></span>
+          <h4>Envío rápido y gratuito</h4>
+          <p>
+            Recibe tus productos a tiempo con nuestro servicio de envío rápido y gratuito.
+          </p>
+        </div>
+        <div class="caracteristica__card">
+          <span><i class="ri-shopping-bag-3-line"></i></span>
+          <h4>Compra fácilmente</h4>
+          <p>
+            Proceso de compra sencillo y confiable. Encuentra lo que necesitas sin complicaciones.
+          </p>
+        </div>
+        <div class="caracteristica__card">
+            <span><i class="ri-shield-check-line"></i></span>
+            <h4>Garantía de Calidad</h4>
+            <p>
+                Todos nuestros productos pasan por estrictos controles de calidad, asegurando que obtienes lo mejor del mercado.
+            </p>
+        </div>
+        <div class="caracteristica__card">
+            <span><i class="ri-tools-line"></i></span>
+            <h4>Asesoramiento Especializado</h4>
+            <p>
+                Contamos con un equipo de expertos listos para asesorarte y recomendarte los mejores productos para tu proyecto.
+            </p>
+        </div>
+      </div>
+    </div>
+    <div class="nosotros__mapa">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3977.206374797689!2d-74.14856018456096!3d4.556869396689245!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f9f5d6e7aa3c7%3A0x7aa7870ba540c753!2sCl.%2066%20Bis%20Sur%20%2318r2%2C%20Bogot%C3%A1!5e0!3m2!1ses!2sco!4v1679627464201!5m2!1ses!2sco" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>    
+</section>
+
+
+</body>
+
+
+{% include 'sitio/pie.html' %}
